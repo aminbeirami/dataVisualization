@@ -20,11 +20,12 @@ stock_data = pd.read_pickle('stock_data.pickle')
 # plt.plot(stock_data['High'],label = 'High Daily', color='g')
 # plt.plot(stock_data['Low'], label = 'Low Daily', color='b')
 
-resampled = stock_data.resample('M', how = 'median')
+resampled = stock_data.resample('M').median()
 plt.plot(resampled['Low'],label='High Monthly', color='r')
 plt.plot(resampled['High'],label='Low Monthly', color='k' )
 
 plt.legend()
 plt.xlabel('Year')
 plt.ylabel('Stock Price')
+plt.title('practice of Stock Market Plotting')
 plt.show()
